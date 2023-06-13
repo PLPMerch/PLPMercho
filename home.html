@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="logo.png" sizes="32x32">
+	<link rel="stylesheet" href="style.css">
+	<style>
+	video{
+		width: 60%;
+		padding: 0;
+		box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+	}
+
+	#header-video {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 80vh;
+		margin-top: 85px;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.play-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		cursor: pointer;
+	}
+
+	.play-button img {
+		width: 80px;
+	}
+
+	#video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+		cursor: pointer;
+	}
+
+	#video-overlay img {
+		width: 80px;
+	}
+
+	#video-overlay p {
+		color: #fff;
+		font-size: 24px;
+	}
+
+	</style>
+</head>
+<body>
+<header>
+	<div class="white">
+		<span class="plp">PLP - </span><span class="merch">- MERCH</span>
+		<img class="Habtlogo" src="logo.png"/>	
+		<hr>
+		<div class="nav">
+			<div class="button">
+				<button class="abtbtn" onclick="window.location.href='home.html'">HOME</button> &nbsp; &nbsp;
+				<button class="abtbtn" onclick="window.location.href='shop.html'">SHOP</button>&nbsp; &nbsp;
+				<button class="abtbtn" onclick="window.location.href='faqs.html'">FAQs</button>&nbsp; &nbsp;
+				<button class="abtbtn" onclick="window.location.href='home.html'">CONTACT US</button>&nbsp; &nbsp;
+				<button class="abtbtn" onclick="window.location.href='about.html'">ABOUT US</button>&nbsp; &nbsp;
+			</div>
+		</div>
+	</div>
+</header>
+
+<div id="header-video">
+	<video width="100%" controls autoplay id="video" src="entrep (finale).mp4" loop playsinline></video>
+	<div id="video-overlay" onclick="playVideo()">
+		<img src="play.png" alt="Play Button">
+	</div>
+</div>
+
+<script>
+	function playVideo() {
+		var video = document.getElementById('video');
+		var overlay = document.getElementById('video-overlay');
+		if (video.paused) {
+			video.play();
+			overlay.style.display = 'none';
+		} else {
+			video.pause();
+			overlay.style.display = 'flex';
+		}
+	}
+</script>
+
+<footer>
+	<p>&copy; 2023, PLP Merch <br> All trademarks and registered trademarks appearing on this site are the property of the respective owners<br>   <br></p>
+</footer>
+
+</body>
+</html>
